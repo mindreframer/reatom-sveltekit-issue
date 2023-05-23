@@ -1,38 +1,41 @@
-# create-svelte
-
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+### Setup
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+git clone ...
+cd ...
+pnpm install
+pnpm dev
+# open browser and see the error
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Error
 
 ```bash
-npm run dev
+1:15:39 AM [vite] Error when evaluating SSR module /src/routes/+page.svelte: failed to import "/src/lib/reatom/Todos.svelte"
+|- /Users/roman/Desktop/EXPERIMENTS/0.SVELTE/reatom/node_modules/.pnpm/@reatom+framework@3.4.6/node_modules/@reatom/framework/build/index.module.js:1
+export*from"@reatom/async";export*from"@reatom/core";export*from"@reatom/effects";export*from"@reatom/hooks";export*from"@reatom/lens";export*from"@reatom/logger";export*from"@reatom/primitives";export*from"@reatom/utils";
+^^^^^^
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+SyntaxError: Unexpected token 'export'
+    at internalCompileFunction (node:internal/vm:73:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1176:20)
+    at Module._compile (node:internal/modules/cjs/loader:1218:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:169:29)
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+
+Internal server error: Unexpected token 'export'
+      at internalCompileFunction (node:internal/vm:73:18)
+      at wrapSafe (node:internal/modules/cjs/loader:1176:20)
+      at Module._compile (node:internal/modules/cjs/loader:1218:27)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+      at Module.load (node:internal/modules/cjs/loader:1117:32)
+      at Module._load (node:internal/modules/cjs/loader:958:12)
+      at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:169:29)
+      at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+/Users/roman/Desktop/EXPERIMENTS/0.SVELTE/reatom/node_modules/.pnpm/@reatom+framework@3.4.6/node_modules/@reatom/framework/build/index.module.js:1
+export*from"@reatom/async";export*from"@reatom/core";export*from"@reatom/effects";export*from"@reatom/hooks";export*from"@reatom/lens";export*from"@reatom/logger";export*from"@reatom/primitives";export*from"@reatom/utils";
+^^^^^^
 ```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
