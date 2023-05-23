@@ -1,9 +1,15 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@reatom/core':
+    specifier: ^3.3.0
+    version: 3.3.0
   '@reatom/framework':
     specifier: ^3.4.6
     version: 3.4.6
+  '@reatom/lens':
+    specifier: ^3.5.0
+    version: 3.5.0
   '@reatom/npm-svelte':
     specifier: ^3.1.0
     version: 3.1.0
